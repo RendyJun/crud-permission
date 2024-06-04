@@ -61,7 +61,7 @@ class SuperAdminSeeder extends Seeder
 
         // tugas AdminLTE
         // $admin_lte = User::create([
-        //     'name' => 'RagilLTE',
+        //     'name' => 'RendyLTE',
         //     'email' => 'adminlte@roles.id',
         //     'password' => Hash::make('123456'),
         //     'type' => 4
