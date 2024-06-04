@@ -64,33 +64,6 @@
                                     name="password_confirmation">
                             </div>
                         </div>
-                        {{-- <div class="mb-3 row">
-                            <label for="roles" class="col-md-4 col-form-label text-md-end text-start">Roles</label>
-                            <div class="col-md-6">
-                                <select class="form-select @error('roles') is-invalid @enderror" multiple aria-label="Roles"
-                                    id="roles" name="roles[]">
-                                    @forelse ($roles as $role)
-                                        @if ($role != 'Super Admin')
-                                            <option value="{{ $role }}"
-                                                {{ in_array($role, old('roles') ?? []) ? 'selected' : '' }}>
-                                                {{ $role }}
-                                            </option>
-                                        @else
-                                            @if (Auth::user()->hasRole('Super Admin'))
-                                                <option value="{{ $role }}"
-                                                    {{ in_array($role, old('roles') ?? []) ? 'selected' : '' }}>
-                                                    {{ $role }}
-                                                </option>
-                                            @endif
-                                        @endif
-                                    @empty
-                                    @endforelse
-                                </select>
-                                @if ($errors->has('roles'))
-                                    <span class="text-danger">{{ $errors->first('roles') }}</span>
-                                @endif
-                            </div>
-                        </div> --}}
                         <div class="mb-3 row">
                             <label for="jurusan" class="col-md-4 col-form-label text-md-end text-start">Jurusan</label>
                             <div class="col-md-6">
@@ -104,7 +77,7 @@
                         <div class="mb-3 row">
                             <label for="semester" class="col-md-4 col-form-label text-md-end text-start">Semester</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control @error('semester') is-invalid @enderror"
+                                <input type="number" class="form-control @error('semester') is-invalid @enderror"
                                     id="semester" name="semester" value="{{ old('semester') }}">
                                 @if ($errors->has('semester'))
                                     <span class="text-danger">{{ $errors->first('semester') }}</span>

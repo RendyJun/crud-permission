@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('home') }}">
-                    Role Management
+                    Menu Management
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -35,26 +35,26 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link {{ Request::routeIs(['login']) ? 'active fw-bold text-uppercase' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link {{ Request::routeIs(['register']) ? 'active fw-bold text-uppercase' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             @canany(['create-role', 'edit-role', 'delete-role'])
-                                <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Roles</a></li>
+                                <li><a class="nav-link {{ Request::routeIs(['roles.index']) ? 'active fw-bold text-uppercase' : '' }}" href="{{ route('roles.index') }}">Manage Roles</a></li>
                             @endcanany
                             @canany(['create-user', 'edit-user', 'delete-user'])
-                                <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
+                                <li><a class="nav-link {{ Request::routeIs(['users.index']) ? 'active fw-bold text-uppercase' : '' }}" href="{{ route('users.index') }}">Manage Users</a></li>
                             @endcanany
                             @canany(['create-product', 'edit-product', 'delete-product'])
-                                <li><a class="nav-link" href="{{ route('products.index') }}">Manage Products</a></li>
+                                <li><a class="nav-link {{ Request::routeIs(['products.index']) ? 'active fw-bold text-uppercase' : '' }}" href="{{ route('products.index') }}">Manage Products</a></li>
                             @endcanany
                             @canany(['create-mahasiswa', 'edit-mahasiswa', 'delete-mahasiswa', 'show-mahasiswa'])
-                                <li><a class="nav-link" href="{{ route('mahasiswas.index') }}">Manage Mahasiswas</a></li>
+                                <li><a class="nav-link {{ Request::routeIs(['mahasiswas.index']) ? 'active fw-bold text-uppercase' : '' }}" href="{{ route('mahasiswas.index') }}">Manage Mahasiswas</a></li>
                             @endcanany
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

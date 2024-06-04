@@ -22,7 +22,7 @@ return new class extends Migration
             
             //perubahan mengikut tugas
             $table->string('jurusan')->default('-');
-            $table->string('semester')->default('-');
+            $table->tinyInteger('semester')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

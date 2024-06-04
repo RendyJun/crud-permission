@@ -16,21 +16,21 @@ class SuperAdminSeeder extends Seeder
     {
         // Creating Super Admin User
         $superAdmin = User::create([
-            'name' => 'Super Admin Rhagel',
+            'name' => 'Super Admin Rendy',
             'email' => 'superadmin@roles.id',
             'password' => Hash::make('123456')
         ]);
         $superAdmin->assignRole('Super Admin');
         // Creating Admin User
         $admin = User::create([
-            'name' => 'Rhagel Admin02',
+            'name' => 'Rendy Admin02',
             'email' => 'admin@roles.id',
             'password' => Hash::make('123456')
         ]);
         $admin->assignRole('Admin');
         // Creating Product Manager User
         $productManager = User::create([
-            'name' => 'Ragil Operan',
+            'name' => 'Rendyyy Operan',
             'email' => 'operator@roles.id',
             'password' => Hash::make('123456')
         ]);
@@ -38,21 +38,21 @@ class SuperAdminSeeder extends Seeder
 
         //mengikuti tugas
         $adminBaak = User::create([
-            'name' => "Bakragil",
+            'name' => "BakRendy",
             'email' => 'adminbaak@roles.id',
             'password' => Hash::make('123456')
         ]);
         $adminBaak->assignRole('Admin Baak'); 
 
         $adminKeuangan = User::create([
-            'name' => "Duitragil",
+            'name' => "DuitRendy",
             'email' => 'adminkeuangan@roles.id',
             'password' => Hash::make('123456')
         ]);
         $adminKeuangan->assignRole('Admin Keuangan');
         
         $mahasiswa = User::create([
-            'name' => "Maharagil",
+            'name' => "MahaRendy",
             'email' => 'mahasiswa@roles.id',
             'password' => Hash::make('123456'),
             'type' => 3
